@@ -1,10 +1,10 @@
-// Fade-in scroll effect
+// ===== FADE-IN ON SCROLL =====
 window.addEventListener('scroll', () => {
   const elements = document.querySelectorAll('.fade-in');
   const windowBottom = window.innerHeight + window.scrollY;
 
   elements.forEach(el => {
-    const elTop = el.offsetTop + 100;
+    const elTop = el.offsetTop + 100; // start fading slightly before fully visible
     if (windowBottom > elTop) {
       el.style.opacity = 1;
       el.style.transform = 'translateY(0)';
@@ -12,7 +12,7 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Dynamic typing for name
+// ===== DYNAMIC TYPING FOR NAME =====
 const nameEl = document.getElementById('dynamic-name');
 const fullName = "Shivam Tripathi";
 let i = 0;
@@ -21,18 +21,19 @@ function typeName() {
   if (i < fullName.length) {
     nameEl.innerHTML += fullName.charAt(i);
     i++;
-    setTimeout(typeName, 150);
+    setTimeout(typeName, 120); // speed of typing
   }
 }
 typeName();
 
-// Dynamic typing for skills
+// ===== DYNAMIC TYPING FOR SKILLS =====
 const skills = [
   "Python, Pandas, Matplotlib, NumPy",
   "Data Analysis & Visualization",
   "Research & Analytical Thinking",
   "Sociology, Anthropology, Economics Knowledge",
-  "Flask / Small Web Projects"
+  "Flask / Small Web Projects",
+  "C, C++, Java"
 ];
 
 const skillsEl = document.getElementById('dynamic-skills');
@@ -44,7 +45,7 @@ function typeSkill(skill, el, callback) {
     if (j < skill.length) {
       el.innerHTML += skill.charAt(j);
       j++;
-      setTimeout(typeChar, 50);
+      setTimeout(typeChar, 40); // typing speed for skills
     } else {
       el.innerHTML += " ✅";
       callback();
@@ -59,7 +60,7 @@ function showSkills() {
     skillsEl.appendChild(li);
     typeSkill(skills[skillIndex], li, () => {
       skillIndex++;
-      setTimeout(showSkills, 300);
+      setTimeout(showSkills, 300); // delay between skills
     });
   }
 }
