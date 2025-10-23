@@ -31,8 +31,8 @@ const skills = [
   "Python, Pandas, Matplotlib, NumPy",
   "Data Analysis & Visualization",
   "Research & Analytical Thinking",
-  "Sociology, Anthropology, Economics Knowledge",
-  "Flask / Small Web Projects",
+  "Social Sciences and humanities for better data comprehension",
+  "Flask , Web Projects",
   "C, C++, Java"
 ];
 
@@ -66,3 +66,4 @@ function showSkills() {
 }
 
 showSkills();
+
